@@ -1,0 +1,371 @@
+import java.util.*;
+public class practica3{
+
+ public static void main(String args[]){
+	boolean salir=false;
+	int opc=0;
+	while(!salir){
+		try{
+		int random=(int)(Math.random()*20+10);
+		int random2=(int)(Math.random()*200+100);
+		int flag=0;
+		int flag2=0;
+		String a="";
+		String b="";
+		String c="";
+		String d="";
+		String e="";
+		String f="";
+		String aa="";
+		String bb="";
+		String cc="";
+		char a1='X';
+		char a2='X';
+		char b1='X';
+		char c1='X';
+		char d1='X';
+		char vocal='X';
+		char aa1='X';
+		char bb1='X';
+		char cc1='X';
+		char consonante='X';
+		char e1='X';
+		char f1='X';
+		char consonante2='X';
+		char consonante3='X';
+		
+		System.out.println("seleccione una opcion:");
+		System.out.println("1)obtener RFC");
+		System.out.println("2)obtener CURP");
+		System.out.println("3)obtener CURP Y RFC");
+		System.out.println("4)salir");
+		System.out.println();
+		opc=CapturaEntrada.capturarEntero("opcion");
+		switch(opc)
+		{
+			case 1:
+				System.out.println("ingrese todo en mayusculas");
+				Persona RFC= new Persona();
+				a=RFC.getPrimerApellido();
+				a1=a.charAt(0);
+				a2=a.charAt(1);
+				b=RFC.getSegundoApellido();
+				b1=b.charAt(0);
+				c=RFC.getNombre();
+				c1=c.charAt(0);
+				System.out.println("su RFC es:");
+				System.out.println(a1+""+a2+""+b1+""+c1+ RFC.getAnio() + RFC.getMes() + RFC.getDia() + random2);
+				
+			break;
+			case 2:
+				System.out.println("ingrese todo en mayusculas");
+				Persona CURP= new Persona();
+				
+				a=CURP.getPrimerApellido();
+				a1=a.charAt(0);
+				
+				b=CURP.getPrimerApellido();
+				b1=b.charAt(1);
+				c=CURP.getPrimerApellido();
+				c1=c.charAt(2);
+				d=CURP.getPrimerApellido();
+				d1=d.charAt(3);
+				vocal='a';
+				
+				aa=CURP.getPrimerApellido();
+				aa1=aa.charAt(1);
+				bb=CURP.getPrimerApellido();
+				bb1=bb.charAt(2);
+				cc=CURP.getPrimerApellido();
+				cc1=cc.charAt(3);
+				consonante='a';
+				
+				if((b1=='A' || b1=='E' || b1=='I' || b1=='O' || b1=='U') && flag==0)
+				{vocal=b1;
+					flag=1;
+				}
+				if((c1=='A' || c1=='E' || c1=='I' || c1=='O' || c1=='U') && flag==0)
+				{vocal=c1;
+					flag=1;
+				}
+				if((d1=='A' || d1=='E' || d1=='I' || d1=='O' || d1=='U') && flag==0)
+				{vocal=d1;
+					flag=1;
+				}
+				e=CURP.getSegundoApellido();
+				e1=e.charAt(0);
+				
+				f=CURP.getNombre();
+				f1=f.charAt(0);
+				
+				if(aa1!='A' && aa1!='E' && aa1!='I' && aa1!='O' && aa1!='U' && flag2==0)
+				{consonante=aa1;
+					flag2=1;
+				}
+				if(bb1!='A' && bb1!='E' && bb1!='I' && bb1!='O' && bb1!='U' && flag2==0)
+				{consonante=bb1;
+					flag2=1;
+				}
+				if(cc1!='A' && cc1!='E' && cc1!='I' && cc1!='O' && cc1!='U' && flag2==0)
+				{consonante=cc1;
+					flag2=1;
+				}
+				
+				aa=CURP.getSegundoApellido();
+				aa1=aa.charAt(1);
+				bb=CURP.getSegundoApellido();
+				bb1=bb.charAt(2);
+				cc=CURP.getSegundoApellido();
+				cc1=cc.charAt(3);
+				consonante2='a';
+				flag2=0;
+				if(aa1!='A' && aa1!='E' && aa1!='I' && aa1!='O' && aa1!='U' && flag2==0)
+				{consonante2=aa1;
+					flag2=1;
+				}
+				if(bb1!='A' && bb1!='E' && bb1!='I' && bb1!='O' && bb1!='U' && flag2==0)
+				{consonante2=bb1;
+					flag2=1;
+				}
+				if(cc1!='A' && cc1!='E' && cc1!='I' && cc1!='O' && cc1!='U' && flag2==0)
+				{consonante2=cc1;
+					flag2=1;
+				}
+				
+				aa=CURP.getNombre();
+				aa1=aa.charAt(1);
+				bb=CURP.getNombre();
+				bb1=bb.charAt(2);
+				cc=CURP.getNombre();
+				cc1=cc.charAt(3);
+				consonante3='a';
+				flag2=0;
+				if(aa1!='A' && aa1!='E' && aa1!='I' && aa1!='O' && aa1!='U' && flag2==0)
+				{consonante3=aa1;
+					flag2=1;
+				}
+				if(bb1!='A' && bb1!='E' && bb1!='I' && bb1!='O' && bb1!='U' && flag2==0)
+				{consonante3=bb1;
+					flag2=1;
+				}
+				if(cc1!='A' && cc1!='E' && cc1!='I' && cc1!='O' && cc1!='U' && flag2==0)
+				{consonante3=cc1;
+					flag2=1;
+				}
+				
+				System.out.println("su CURP es:");
+				System.out.println(a1+""+vocal+""+e1+""+f1+ CURP.getAnio() + CURP.getMes() + CURP.getDia() + CURP.getSexo() + CURP.getEntidadFederativa() + consonante + consonante2 + consonante3 +""+random);
+				
+			break;
+			case 3:
+				System.out.println("ingrese todo en mayusculas");
+				Persona CyR= new Persona();
+				a=CyR.getPrimerApellido();
+				a1=a.charAt(0);
+				
+				b=CyR.getPrimerApellido();
+				b1=b.charAt(1);
+				c=CyR.getPrimerApellido();
+				c1=c.charAt(2);
+				d=CyR.getPrimerApellido();
+				d1=d.charAt(3);
+				vocal='a';
+				
+				aa=CyR.getPrimerApellido();
+				aa1=aa.charAt(1);
+				bb=CyR.getPrimerApellido();
+				bb1=bb.charAt(2);
+				cc=CyR.getPrimerApellido();
+				cc1=cc.charAt(3);
+				consonante='a';
+				
+				if((b1=='A' || b1=='E' || b1=='I' || b1=='O' || b1=='U') && flag==0)
+				{vocal=b1;
+					flag=1;
+				}
+				if((c1=='A' || c1=='E' || c1=='I' || c1=='O' || c1=='U') && flag==0)
+				{vocal=c1;
+					flag=1;
+				}
+				if((d1=='A' || d1=='E' || d1=='I' || d1=='O' || d1=='U') && flag==0)
+				{vocal=d1;
+					flag=1;
+				}
+				e=CyR.getSegundoApellido();
+				e1=e.charAt(0);
+				
+				f=CyR.getNombre();
+				f1=f.charAt(0);
+				
+				if(aa1!='A' && aa1!='E' && aa1!='I' && aa1!='O' && aa1!='U' && flag2==0)
+				{consonante=aa1;
+					flag2=1;
+				}
+				if(bb1!='A' && bb1!='E' && bb1!='I' && bb1!='O' && bb1!='U' && flag2==0)
+				{consonante=bb1;
+					flag2=1;
+				}
+				if(cc1!='A' && cc1!='E' && cc1!='I' && cc1!='O' && cc1!='U' && flag2==0)
+				{consonante=cc1;
+					flag2=1;
+				}
+				
+				aa=CyR.getSegundoApellido();
+				aa1=aa.charAt(1);
+				bb=CyR.getSegundoApellido();
+				bb1=bb.charAt(2);
+				cc=CyR.getSegundoApellido();
+				cc1=cc.charAt(3);
+				consonante2='a';
+				flag2=0;
+				if(aa1!='A' && aa1!='E' && aa1!='I' && aa1!='O' && aa1!='U' && flag2==0)
+				{consonante2=aa1;
+					flag2=1;
+				}
+				if(bb1!='A' && bb1!='E' && bb1!='I' && bb1!='O' && bb1!='U' && flag2==0)
+				{consonante2=bb1;
+					flag2=1;
+				}
+				if(cc1!='A' && cc1!='E' && cc1!='I' && cc1!='O' && cc1!='U' && flag2==0)
+				{consonante2=cc1;
+					flag2=1;
+				}
+				
+				aa=CyR.getNombre();
+				aa1=aa.charAt(1);
+				bb=CyR.getNombre();
+				bb1=bb.charAt(2);
+				cc=CyR.getNombre();
+				cc1=cc.charAt(3);
+				consonante3='a';
+				flag2=0;
+				if(aa1!='A' && aa1!='E' && aa1!='I' && aa1!='O' && aa1!='U' && flag2==0)
+				{consonante3=aa1;
+					flag2=1;
+				}
+				if(bb1!='A' && bb1!='E' && bb1!='I' && bb1!='O' && bb1!='U' && flag2==0)
+				{consonante3=bb1;
+					flag2=1;
+				}
+				if(cc1!='A' && cc1!='E' && cc1!='I' && cc1!='O' && cc1!='U' && flag2==0)
+				{consonante3=cc1;
+					flag2=1;
+				}
+				
+				System.out.println("su CURP es:");
+				System.out.println(a1+""+vocal+""+e1+""+f1+ CyR.getAnio() + CyR.getMes() + CyR.getDia() + CyR.getSexo() + CyR.getEntidadFederativa() + consonante + consonante2 + consonante3 +""+random);
+				a=CyR.getPrimerApellido();
+				a1=a.charAt(0);
+				a2=a.charAt(1);
+				b=CyR.getSegundoApellido();
+				b1=b.charAt(0);
+				c=CyR.getNombre();
+				c1=c.charAt(0);
+				System.out.println("su RFC es:");
+				System.out.println(a1+""+a2+""+b1+""+c1+ CyR.getAnio() + CyR.getMes() + CyR.getDia() + random2);
+			break;
+			case 4:
+				salir=true;
+			break;
+			default:
+				System.out.println("seleccione una opcion valida");
+				
+		}
+		}catch(InputMismatchException e){
+			System.out.println("debes escribir un numero");
+			}		
+	}
+ }
+}
+ class Persona{
+
+	//sección de datos/campos/variables de clase/atributos
+	String nombre;
+	String primerApellido;
+	String segundoApellido;
+	String sexo;
+	String entidadFederativa;
+	String dia;
+	String mes;
+	String anio;
+	
+	//Método constructor
+	public Persona(){
+		setNombre(CapturaEntrada.capturarCadena("Introduce nombre "));
+		setPrimerApellido(CapturaEntrada.capturarCadena("Introduce primer apellido "));
+		setSegundoApellido(CapturaEntrada.capturarCadena("Introduce segundo apellido "));
+		setSexo(CapturaEntrada.capturarCadena("Introduce tu sexo (H hombre, M mujer) "));
+		setEntidadFederativa(CapturaEntrada.capturarCadena("Introduce tu edentidad federativa (dos letras) "));
+		setDia(CapturaEntrada.capturarCadena("Introduce dia de nacimiento (dos numeros) "));
+		setMes(CapturaEntrada.capturarCadena("Introduce mes de nacimiento (dos numeros) "));
+		setAnio(CapturaEntrada.capturarCadena("Introduce año de nacimiento (dos numeros) "));
+	}
+		
+	//Sección de metodos: setters, getters
+	public void setNombre(String nombre){
+		this.nombre = nombre;}
+	public void setPrimerApellido(String primerApellido){
+		this.primerApellido = primerApellido;}
+	public void setSegundoApellido(String segundoApellido){
+		this.segundoApellido = segundoApellido;}
+	public void setSexo(String sexo){
+		this.sexo = sexo;}
+	public void setEntidadFederativa(String entidadFederativa){
+		this.entidadFederativa = entidadFederativa;}
+	public void setDia(String dia){
+		this.dia = dia;}
+	public void setMes(String mes){
+		this.mes = mes;}
+	public void setAnio(String anio){
+		this.anio = anio;}
+
+	public String getNombre(){
+		return nombre;}	
+	public String getPrimerApellido(){
+		return primerApellido;}
+	public String getSegundoApellido(){
+		return segundoApellido;}
+	public String getSexo(){
+		return sexo;}
+	public String getEntidadFederativa(){
+		return entidadFederativa;}
+	public String getDia(){
+		return dia;}
+	public String getMes(){
+		return mes;}
+	public String getAnio(){
+		return anio;}
+} 
+//clase para capturar los tipos de datos
+class CapturaEntrada{
+
+    public static int capturarEntero(String msg){
+        Scanner sc = new Scanner(System.in);
+        System.out.print(""+msg+": ");
+        return (sc.nextInt());
+    }
+
+    public static float capturarFlotante(String msg){
+        Scanner sc = new Scanner(System.in);
+        System.out.print(""+msg+": ");
+        return (sc.nextFloat());
+    }
+
+    public static double capturarDoble(String msg){
+        Scanner sc = new Scanner(System.in);
+        System.out.print(""+msg+": ");
+        return (sc.nextDouble());
+    }
+
+    public static String capturarCadena(String msg){
+        Scanner sc = new Scanner(System.in);
+        System.out.print(""+msg+": ");
+        return (sc.nextLine());
+    }
+	
+	public static char capturarCaracter(String msg){
+		Scanner sc = new Scanner(System.in);
+        System.out.print(""+msg+": ");
+        return (sc.next().charAt(0));
+	}
+}
