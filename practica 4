@@ -1,0 +1,151 @@
+import java.util.*;
+public class practica4{
+
+ public static void main(String args[]){
+	boolean salir=false;
+	int opc=0;
+	int pos =-1;
+	String pinU="";
+	String pin2="";
+	int flag=0;
+	int cont=0;
+	int acum=0;
+	float cant=0;
+	float sald=0;
+	Banco persona[]= new Banco[20];
+	while(!salir){
+		try{
+		System.out.println();
+		System.out.println("seleccione una opcion:");
+		System.out.println("1)Registrar una cuenta");
+		System.out.println("2)Entrar a una cuenta existente");
+		System.out.println("3)salir");
+		System.out.println();
+		opc=CapturaEntrada.capturarEntero("opcion");
+		switch(opc)
+		{
+			case 1:
+				acum=acum+1;
+				pos=pos+1;
+				
+				persona[pos]= new Banco(CapturaEntrada.capturarCadena("ingrese el nombre"),CapturaEntrada.capturarCadena("ingrese el pin (4 digitos)"),CapturaEntrada.capturarFlotante("ingrese el saldo"));
+			break;
+			case 2:
+				pinU=CapturaEntrada.capturarCadena("ingrese el PIN:");
+				for(int i= 0 ; i < acum ; i++)
+				{
+					pin2=persona[i].getPin();
+					if(pinU.equals(pin2))
+					{
+						System.out.println("cuenta:");
+						System.out.println(persona[i].getNombre());
+						System.out.println("saldo:");
+						System.out.println(persona[i].getSaldo());
+						System.out.println();
+						System.out.println("seleccione una opcion:");
+						System.out.println("1)retirar");
+						System.out.println("2)depositar");
+						System.out.println("3)ninguna");
+						opc=CapturaEntrada.capturarEntero("opcion");
+						switch(opc)
+						{
+							case 1:
+								cant=CapturaEntrada.capturarFlotante("cantidad a retirar ");
+								if(cant>persona[i].getSaldo())
+									System.out.println("saldo insuficiente");
+								else
+									persona[i].setSaldo(persona[i].getSaldo()-cant);
+								System.out.println("nuevo saldo:"+persona[i].getSaldo());
+								System.out.println();
+							break;
+							case 2:
+								cant=CapturaEntrada.capturarFlotante("cantidad a depositar ");
+								persona[i].setSaldo(persona[i].getSaldo()+cant);
+								System.out.println("nuevo saldo:"+persona[i].getSaldo());
+								System.out.println();
+							case 3:
+							
+							break;
+						}
+						
+					}
+					else
+						System.out.println("no se encontraron cuentas");
+				}			
+			break;
+			case 3:
+				salir=true;
+			break;
+			default:
+				System.out.println("seleccione una opcion valida");
+				
+		}
+		}catch(InputMismatchException e){
+			System.out.println("debes escribir un numero");
+			}		
+	}
+	}
+ }
+ class Banco extends Cuenta
+ {
+	 public String nombre;
+	 public float saldo;
+	 public String pin;
+	
+	public Banco(String nombre, String pin, float saldo){
+		setNombre(nombre);
+		setPin(pin);
+		setSaldo(saldo);
+	}
+	//Sección de metodos: setters, getters
+	public void setNombre(String nombre){
+		this.nombre = nombre;}
+	public void setSaldo(float saldo){
+		this.saldo = saldo;}
+	public void setPin(String pin){
+		this.pin = pin;}
+		
+	public String getNombre(){
+		return nombre;}	
+	public float getSaldo(){
+		return saldo;}
+	public String getPin(){
+		return pin;}
+ }
+ class CapturaEntrada{
+
+    public static int capturarEntero(String msg){
+        Scanner sc = new Scanner(System.in);
+        System.out.print(""+msg+": ");
+        return (sc.nextInt());
+    }
+
+    public static float capturarFlotante(String msg){
+        Scanner sc = new Scanner(System.in);
+        System.out.print(""+msg+": ");
+        return (sc.nextFloat());
+    }
+
+    public static double capturarDoble(String msg){
+        Scanner sc = new Scanner(System.in);
+        System.out.print(""+msg+": ");
+        return (sc.nextDouble());
+    }
+
+    public static String capturarCadena(String msg){
+        Scanner sc = new Scanner(System.in);
+        System.out.print(""+msg+": ");
+        return (sc.nextLine());
+    }
+	
+	public static char capturarCaracter(String msg){
+		Scanner sc = new Scanner(System.in);
+        System.out.print(""+msg+": ");
+        return (sc.next().charAt(0));
+	}
+}
+class Cuenta{
+	 private String nombre;
+	 private float saldo;
+	 private String pin;
+}
