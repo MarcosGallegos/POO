@@ -1,0 +1,117 @@
+import java.util.*;
+public class practica5{
+ public static void main(String args[]){
+	 Scanner sc= new Scanner(System.in);
+	 boolean salir=false;
+	 int opc=0;
+	 
+	 pajaro[] personajes= new pajaro[3];
+	 personajes[0]=new pajaro("Los Blues","azul","separarse en tres","buenos contra el vidrio. malos para la piedra");
+	 personajes[1]=new pajaro("Bomb","negro","explotar","bueno contra la piedra");
+	 personajes[2]=new pajaro("Chuck","amarillo","alta velocidad lo que permite mayor penetracion","bueno contra la madera. malo para el vidrio");
+	 while(!salir){
+		try{
+		System.out.println();
+		System.out.println("seleccione una opcion:");
+		System.out.println("1)pajaro 1");
+		System.out.println("2)pajaro 2");
+		System.out.println("3)pajaro 3");
+		System.out.println("4)salir");
+		System.out.println();
+		opc=CapturaEntrada.capturarEntero("opcion");
+		switch(opc)
+		{
+			case 1:
+				System.out.println("Nombre:"+personajes[0].getNombre()+"\ncolor:"+personajes[0].getColor()+"\nhabilidad:"+personajes[0].getHabilidad()+"\nfortaleza:"+personajes[0].getBueno());
+			break;
+			case 2:
+				System.out.println("Nombre:"+personajes[1].getNombre()+"\ncolor:"+personajes[1].getColor()+"\nhabilidad:"+personajes[1].getHabilidad()+"\nfortaleza:"+personajes[1].getBueno());
+			break;
+			case 3:
+				System.out.println("Nombre:"+personajes[2].getNombre()+"\ncolor:"+personajes[2].getColor()+"\nhabilidad:"+personajes[2].getHabilidad()+"\nfortaleza:"+personajes[2].getBueno());
+			break;
+			case 4:
+				salir=true;
+			break;
+			default:
+				System.out.println("seleccione una opcion valida");
+				
+		}
+		}catch(InputMismatchException e){
+			System.out.println("debes escribir un numero");
+			}		
+	}
+   }
+ }
+ class personaje{
+	protected String nombre;
+	protected String color;
+	
+	public personaje(String nombre, String color){
+		setNombre(nombre);
+		setColor(color);
+	}
+	public void setNombre(String nombre){
+		this.nombre = nombre;}
+	public void setColor(String color){
+		this.color = color;}
+		
+	public String getNombre(){
+		return nombre;}	
+	public String getColor(){
+		return color;}	
+	
+ }
+ class pajaro extends personaje{
+	 
+	protected String habilidad;
+	protected String bueno;
+	 
+	public pajaro(String nombre, String color, String habilidad, String bueno){
+		super(nombre,color);
+		setHabilidad(habilidad);
+		setBueno(bueno);
+	}
+	
+	public void setHabilidad(String habilidad){
+		this.habilidad = habilidad;}
+	public void setBueno(String bueno){
+		this.bueno = bueno;}
+	
+	public String getHabilidad(){
+		return habilidad;}
+	public String getBueno(){
+		return bueno;}
+ }
+ class CapturaEntrada{
+
+    public static int capturarEntero(String msg){
+        Scanner sc = new Scanner(System.in);
+        System.out.print(""+msg+": ");
+        return (sc.nextInt());
+    }
+
+    public static float capturarFlotante(String msg){
+        Scanner sc = new Scanner(System.in);
+        System.out.print(""+msg+": ");
+        return (sc.nextFloat());
+    }
+
+    public static double capturarDoble(String msg){
+        Scanner sc = new Scanner(System.in);
+        System.out.print(""+msg+": ");
+        return (sc.nextDouble());
+    }
+
+    public static String capturarCadena(String msg){
+        Scanner sc = new Scanner(System.in);
+        System.out.print(""+msg+": ");
+        return (sc.nextLine());
+    }
+	
+	public static char capturarCaracter(String msg){
+		Scanner sc = new Scanner(System.in);
+        System.out.print(""+msg+": ");
+        return (sc.next().charAt(0));
+	}
+}
