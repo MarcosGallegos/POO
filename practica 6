@@ -1,0 +1,345 @@
+import java.util.*;
+public class practica6{
+ public static void main(String args[]){
+	 Equipo cantidad=new Equipo();
+	 
+	 int opc;
+	 boolean salir=false;
+	 
+	 Torneo torneo = new Torneo();
+	 torneo.setTorneo("super campeones","mexico",5,3,4);
+	 
+	 torneo.equipo1.setEquipo("Los fuertes","NBA","Roberto Campos",3,1,2);
+	 torneo.equipo2.setEquipo("Los valientes","NBA","josue gonzales",5,2,3);
+	 torneo.equipo3.setEquipo("Invictos","NBA","Marco lopez",4,2,2);
+	 torneo.equipo4.setEquipo("Los indestructibles","NBA","Juan perez",3,1,2);
+	 torneo.equipo5.setEquipo("destrozadores","NBA","Jaime Mendoza",3,1,2);
+	 
+	 torneo.equipo1.jugador1.setJugador(10,"Antonio",25,"base","1.80");
+	 torneo.equipo1.jugador2.setJugador(15,"Jose",39,"escolta","1.82");
+	 torneo.equipo1.jugador3.setJugador(20,"Francisco",10,"pivot","1.83");
+	 torneo.equipo1.jugador4.setJugador(67,"Juan",11,"alero","1.84");
+	 torneo.equipo1.jugador5.setJugador(34,"Manuel",12,"alero","1.90");
+	 torneo.equipo1.jugador6.setJugador(92,"Pedro",56,"pivot","1.88");
+	 torneo.equipo1.jugador7.setJugador(2,"Jesus",45,"escolta","1.89");
+	 torneo.equipo1.jugador8.setJugador(8,"Angel",74,"base","1.88");
+	 torneo.equipo1.jugador9.setJugador(3,"Miguel",34,"ala-pivot","1.83");
+	 torneo.equipo1.jugador10.setJugador(5,"Javier",23,"ala-pivot","1.89");
+	 
+	 torneo.equipo2.jugador11.setJugador(96,"David",21,"base","1.88");
+	 torneo.equipo2.jugador12.setJugador(45,"Jose",55,"base","1.84");
+	 torneo.equipo2.jugador13.setJugador(28,"Carlos",33,"ala-pivot","1.86");
+	 torneo.equipo2.jugador14.setJugador(29,"Alejandro",54,"ala-pivot","1.90");
+	 torneo.equipo2.jugador15.setJugador(13,"Luis",43,"escolta","1.92");
+	 torneo.equipo2.jugador16.setJugador(11,"Miguel",12,"pivot","1.83");
+	 torneo.equipo2.jugador17.setJugador(9,"Javier",10,"escolta","1.92");
+	 torneo.equipo2.jugador18.setJugador(79,"Rafael",45,"pivot","1.93");
+	 torneo.equipo2.jugador19.setJugador(20,"Daniel",23,"alero","1.94");
+	 torneo.equipo2.jugador20.setJugador(87,"Pablo",45,"alero","1.90");
+	 
+	 torneo.equipo3.jugador21.setJugador(33,"Sergio",19,"base","1.89");
+	 torneo.equipo3.jugador22.setJugador(37,"Juan",20,"base","1.88");
+	 torneo.equipo3.jugador23.setJugador(65,"Luis",13,"ala-pivot","1.90");
+	 torneo.equipo3.jugador24.setJugador(85,"Antonio",45,"ala-pivot","1.91");
+	 torneo.equipo3.jugador25.setJugador(13,"Joaquin",56,"alero","1.88");
+	 torneo.equipo3.jugador26.setJugador(26,"Fernando",34,"escolta","1.90");
+	 torneo.equipo3.jugador27.setJugador(90,"Carlos",35,"pivot","1.91");
+	 torneo.equipo3.jugador28.setJugador(98,"Andres",12,"escolta","1.92");
+	 torneo.equipo3.jugador29.setJugador(88,"Manuel",45,"pivot","1.93");
+	 torneo.equipo3.jugador30.setJugador(68,"Jose",60,"alero","1.88");
+	 
+	 torneo.equipo4.jugador31.setJugador(11,"Alvaro",19,"base","1.99");
+	 torneo.equipo4.jugador32.setJugador(10,"Ramon",30,"base","1.92");
+	 torneo.equipo4.jugador33.setJugador(23,"Raul",29,"pivot","1.92");
+	 torneo.equipo4.jugador34.setJugador(28,"Alberto",25,"pivot","1.88");
+	 torneo.equipo4.jugador35.setJugador(59,"Enrique",28,"ala-pivot","1.87");
+	 torneo.equipo4.jugador36.setJugador(48,"Francisco",30,"ala-pivot","1.90");
+	 torneo.equipo4.jugador37.setJugador(45,"Diego",34,"alero","1.91");
+	 torneo.equipo4.jugador38.setJugador(50,"Jorge",34,"escolta","1.90");
+	 torneo.equipo4.jugador39.setJugador(66,"Vicente",45,"alero","1.89");
+	 torneo.equipo4.jugador40.setJugador(77,"Emilio",10,"escolta","1.88");
+	 
+	 torneo.equipo5.jugador41.setJugador(33,"Adrian",16,"base","1.95");
+	 torneo.equipo5.jugador42.setJugador(21,"Julian",56,"base","1.94");
+	 torneo.equipo5.jugador43.setJugador(25,"Alfonso",39,"ala-pivot","1.91");
+	 torneo.equipo5.jugador44.setJugador(27,"Ruben",18,"ala-pivot","1.91");
+	 torneo.equipo5.jugador45.setJugador(39,"Mario",38,"alero","1.93");
+	 torneo.equipo5.jugador46.setJugador(68,"Ivan",28,"pivot","1.88");
+	 torneo.equipo5.jugador47.setJugador(85,"Santiago",29,"pivot","1.89");
+	 torneo.equipo5.jugador48.setJugador(82,"Manuel",58,"alero","1.88");
+	 torneo.equipo5.jugador49.setJugador(91,"Pascual",29,"escolta","1.81");
+	 torneo.equipo5.jugador50.setJugador(77,"Miguel",11,"escolta","1.90");
+	 
+	 while(!salir){
+		try{
+		System.out.println();
+		System.out.println("seleccione una opcion:");
+		System.out.println("1)informacion del torneo");
+		System.out.println("2)informacion del equipo 1");
+		System.out.println("3)informacion del equipo 2");
+		System.out.println("4)informacion del equipo 3");
+		System.out.println("5)informacion del equipo 4");
+		System.out.println("6)informacion del equipo 5");
+		System.out.println("7)salir");
+		System.out.println();
+		opc=CapturaEntrada.capturarEntero("opcion");
+		switch(opc)
+		{
+			case 1:
+				System.out.println("nombre del torneo:"+torneo.nombreTorneo);
+				System.out.println("region:"+torneo.region);
+				System.out.println("numero de equipos que participan:"+torneo.numEquipos);
+				System.out.println("partidos jugados:"+torneo.pJugados);
+				System.out.println("partidos pendietes:"+torneo.pPendientes);
+			break;
+			case 2:
+				System.out.println("EQUIPO 1");
+				System.out.println("nombre del equipo:"+torneo.equipo1.nombreEquipo);
+				System.out.println("division:"+torneo.equipo1.division);
+				System.out.println("\njugadores:\n");
+				System.out.println(torneo.equipo1.jugador1.numJugador+" "+torneo.equipo1.jugador1.nombre);
+				System.out.println(torneo.equipo1.jugador2.numJugador+" "+torneo.equipo1.jugador2.nombre);
+				System.out.println(torneo.equipo1.jugador3.numJugador+" "+torneo.equipo1.jugador3.nombre);
+				System.out.println(torneo.equipo1.jugador4.numJugador+" "+torneo.equipo1.jugador4.nombre);
+				System.out.println(torneo.equipo1.jugador5.numJugador+" "+torneo.equipo1.jugador5.nombre);
+				System.out.println(torneo.equipo1.jugador6.numJugador+" "+torneo.equipo1.jugador6.nombre);
+				System.out.println(torneo.equipo1.jugador7.numJugador+" "+torneo.equipo1.jugador7.nombre);
+				System.out.println(torneo.equipo1.jugador8.numJugador+" "+torneo.equipo1.jugador8.nombre);
+				System.out.println(torneo.equipo1.jugador9.numJugador+" "+torneo.equipo1.jugador9.nombre);
+				System.out.println(torneo.equipo1.jugador10.numJugador+" "+torneo.equipo1.jugador10.nombre);
+				System.out.println("cantidad de jugadores: 10");
+				System.out.println("cantidad de puntos del equipo:");
+				System.out.println(torneo.equipo1.jugador1.puntos + torneo.equipo1.jugador2.puntos + torneo.equipo1.jugador3.puntos + torneo.equipo1.jugador4.puntos + torneo.equipo1.jugador5.puntos + torneo.equipo1.jugador6.puntos + torneo.equipo1.jugador7.puntos + torneo.equipo1.jugador8.puntos + torneo.equipo1.jugador9.puntos + torneo.equipo1.jugador10.puntos);
+				
+			break;
+			case 3:
+				System.out.println("EQUIPO 2");
+				System.out.println("nombre del equipo:"+torneo.equipo2.nombreEquipo);
+				System.out.println("division:"+torneo.equipo2.division);
+				System.out.println("\njugadores:\n");
+				System.out.println(torneo.equipo2.jugador11.numJugador+" "+torneo.equipo2.jugador11.nombre);
+				System.out.println(torneo.equipo2.jugador12.numJugador+" "+torneo.equipo2.jugador12.nombre);
+				System.out.println(torneo.equipo2.jugador13.numJugador+" "+torneo.equipo2.jugador13.nombre);
+				System.out.println(torneo.equipo2.jugador14.numJugador+" "+torneo.equipo2.jugador14.nombre);
+				System.out.println(torneo.equipo2.jugador15.numJugador+" "+torneo.equipo2.jugador15.nombre);
+				System.out.println(torneo.equipo2.jugador16.numJugador+" "+torneo.equipo2.jugador16.nombre);
+				System.out.println(torneo.equipo2.jugador17.numJugador+" "+torneo.equipo2.jugador17.nombre);
+				System.out.println(torneo.equipo2.jugador18.numJugador+" "+torneo.equipo2.jugador18.nombre);
+				System.out.println(torneo.equipo2.jugador19.numJugador+" "+torneo.equipo2.jugador19.nombre);
+				System.out.println(torneo.equipo2.jugador20.numJugador+" "+torneo.equipo2.jugador20.nombre);
+				System.out.println("cantidad de jugadores: 10");
+				System.out.println("cantidad de puntos del equipo:");
+				System.out.println(torneo.equipo2.jugador11.puntos + torneo.equipo2.jugador12.puntos + torneo.equipo2.jugador13.puntos + torneo.equipo2.jugador14.puntos + torneo.equipo2.jugador15.puntos + torneo.equipo2.jugador16.puntos + torneo.equipo2.jugador17.puntos + torneo.equipo2.jugador18.puntos + torneo.equipo2.jugador19.puntos + torneo.equipo2.jugador20.puntos);
+				
+			break;
+			case 4:
+				System.out.println("EQUIPO 3");
+				System.out.println("nombre del equipo:"+torneo.equipo3.nombreEquipo);
+				System.out.println("division:"+torneo.equipo3.division);
+				System.out.println("\njugadores:\n");
+				System.out.println(torneo.equipo3.jugador21.numJugador+" "+torneo.equipo3.jugador21.nombre);
+				System.out.println(torneo.equipo3.jugador22.numJugador+" "+torneo.equipo3.jugador22.nombre);
+				System.out.println(torneo.equipo3.jugador23.numJugador+" "+torneo.equipo3.jugador23.nombre);
+				System.out.println(torneo.equipo3.jugador24.numJugador+" "+torneo.equipo3.jugador24.nombre);
+				System.out.println(torneo.equipo3.jugador25.numJugador+" "+torneo.equipo3.jugador25.nombre);
+				System.out.println(torneo.equipo3.jugador26.numJugador+" "+torneo.equipo3.jugador26.nombre);
+				System.out.println(torneo.equipo3.jugador27.numJugador+" "+torneo.equipo3.jugador27.nombre);
+				System.out.println(torneo.equipo3.jugador28.numJugador+" "+torneo.equipo3.jugador28.nombre);
+				System.out.println(torneo.equipo3.jugador29.numJugador+" "+torneo.equipo3.jugador29.nombre);
+				System.out.println(torneo.equipo3.jugador30.numJugador+" "+torneo.equipo3.jugador30.nombre);
+				System.out.println("cantidad de jugadores: 10");
+				System.out.println("cantidad de puntos del equipo:");
+				System.out.println(torneo.equipo3.jugador21.puntos + torneo.equipo3.jugador22.puntos + torneo.equipo3.jugador23.puntos + torneo.equipo3.jugador24.puntos + torneo.equipo3.jugador25.puntos + torneo.equipo3.jugador26.puntos + torneo.equipo3.jugador27.puntos + torneo.equipo3.jugador28.puntos + torneo.equipo3.jugador29.puntos + torneo.equipo3.jugador30.puntos);
+				
+			break;
+			case 5:
+				System.out.println("EQUIPO 4");
+				System.out.println("nombre del equipo:"+torneo.equipo4.nombreEquipo);
+				System.out.println("division:"+torneo.equipo4.division);
+				System.out.println("\njugadores:\n");
+				System.out.println(torneo.equipo4.jugador31.numJugador+" "+torneo.equipo4.jugador31.nombre);
+				System.out.println(torneo.equipo4.jugador32.numJugador+" "+torneo.equipo4.jugador32.nombre);
+				System.out.println(torneo.equipo4.jugador33.numJugador+" "+torneo.equipo4.jugador33.nombre);
+				System.out.println(torneo.equipo4.jugador34.numJugador+" "+torneo.equipo4.jugador34.nombre);
+				System.out.println(torneo.equipo4.jugador35.numJugador+" "+torneo.equipo4.jugador35.nombre);
+				System.out.println(torneo.equipo4.jugador36.numJugador+" "+torneo.equipo4.jugador36.nombre);
+				System.out.println(torneo.equipo4.jugador37.numJugador+" "+torneo.equipo4.jugador37.nombre);
+				System.out.println(torneo.equipo4.jugador38.numJugador+" "+torneo.equipo4.jugador38.nombre);
+				System.out.println(torneo.equipo4.jugador39.numJugador+" "+torneo.equipo4.jugador39.nombre);
+				System.out.println(torneo.equipo4.jugador40.numJugador+" "+torneo.equipo4.jugador40.nombre);
+				System.out.println("cantidad de jugadores: 10");
+				System.out.println("cantidad de puntos del equipo:");
+				System.out.println(torneo.equipo4.jugador31.puntos + torneo.equipo4.jugador32.puntos + torneo.equipo4.jugador33.puntos + torneo.equipo4.jugador34.puntos + torneo.equipo4.jugador35.puntos + torneo.equipo4.jugador36.puntos + torneo.equipo4.jugador37.puntos + torneo.equipo4.jugador38.puntos + torneo.equipo4.jugador39.puntos + torneo.equipo4.jugador40.puntos);
+				
+			break;
+			case 6:
+				System.out.println("EQUIPO 5");
+				System.out.println("nombre del equipo:"+torneo.equipo5.nombreEquipo);
+				System.out.println("division:"+torneo.equipo5.division);
+				System.out.println("\njugadores:\n");
+				System.out.println(torneo.equipo5.jugador41.numJugador+" "+torneo.equipo5.jugador41.nombre);
+				System.out.println(torneo.equipo5.jugador42.numJugador+" "+torneo.equipo5.jugador42.nombre);
+				System.out.println(torneo.equipo5.jugador43.numJugador+" "+torneo.equipo5.jugador43.nombre);
+				System.out.println(torneo.equipo5.jugador44.numJugador+" "+torneo.equipo5.jugador44.nombre);
+				System.out.println(torneo.equipo5.jugador45.numJugador+" "+torneo.equipo5.jugador45.nombre);
+				System.out.println(torneo.equipo5.jugador46.numJugador+" "+torneo.equipo5.jugador46.nombre);
+				System.out.println(torneo.equipo5.jugador47.numJugador+" "+torneo.equipo5.jugador47.nombre);
+				System.out.println(torneo.equipo5.jugador48.numJugador+" "+torneo.equipo5.jugador48.nombre);
+				System.out.println(torneo.equipo5.jugador49.numJugador+" "+torneo.equipo5.jugador49.nombre);
+				System.out.println(torneo.equipo5.jugador50.numJugador+" "+torneo.equipo5.jugador50.nombre);
+				System.out.println("cantidad de jugadores: 10");
+				System.out.println("cantidad de puntos del equipo:");
+				System.out.println(torneo.equipo5.jugador41.puntos + torneo.equipo5.jugador42.puntos + torneo.equipo5.jugador43.puntos + torneo.equipo5.jugador44.puntos + torneo.equipo5.jugador45.puntos + torneo.equipo5.jugador46.puntos + torneo.equipo5.jugador47.puntos + torneo.equipo5.jugador48.puntos + torneo.equipo5.jugador49.puntos + torneo.equipo5.jugador50.puntos);
+			break;
+			case 7:
+				salir=true;
+			break;
+			default:
+				System.out.println("seleccione una opcion valida");
+				
+		}
+		}catch(InputMismatchException e){
+			System.out.println("debes escribir un numero");
+			}		
+	}
+ }
+}
+class Torneo{
+	String nombreTorneo;
+	String region;
+	int numEquipos;
+	int pJugados;
+	int pPendientes;
+	
+	Equipo equipo1 = new Equipo();
+	Equipo equipo2 = new Equipo();
+	Equipo equipo3 = new Equipo();
+	Equipo equipo4 = new Equipo();
+	Equipo equipo5 = new Equipo();
+	
+	void setTorneo(String nombreTorneo, String region, int numEquipos, int pJugados, int pPendientes){
+		this.nombreTorneo = nombreTorneo;
+		this.region = region;
+		this.numEquipos = numEquipos;
+		this.pJugados = pJugados;
+		this.pPendientes = pPendientes;
+	}
+}
+class Equipo{
+	String nombreEquipo;
+	String division;
+	String nomEntrenador;
+	int torneoParticipados;
+	int torneoG;
+	int torneoP;
+	
+	 Jugador jugador1 = new Jugador();
+	 Jugador jugador2 = new Jugador();
+	 Jugador jugador3 = new Jugador();
+	 Jugador jugador4 = new Jugador();
+	 Jugador jugador5 = new Jugador();
+	 Jugador jugador6 = new Jugador();
+	 Jugador jugador7 = new Jugador();
+	 Jugador jugador8 = new Jugador();
+	 Jugador jugador9 = new Jugador();
+	 Jugador jugador10 = new Jugador();
+	 Jugador jugador11 = new Jugador();
+	 Jugador jugador12 = new Jugador();
+	 Jugador jugador13 = new Jugador();
+	 Jugador jugador14 = new Jugador();
+	 Jugador jugador15 = new Jugador();
+	 Jugador jugador16 = new Jugador();
+	 Jugador jugador17 = new Jugador();
+	 Jugador jugador18 = new Jugador();
+	 Jugador jugador19 = new Jugador();
+	 Jugador jugador20 = new Jugador();
+	 Jugador jugador21 = new Jugador();
+	 Jugador jugador22 = new Jugador();
+	 Jugador jugador23 = new Jugador();
+	 Jugador jugador24 = new Jugador();
+	 Jugador jugador25 = new Jugador();
+	 Jugador jugador26 = new Jugador();
+	 Jugador jugador27 = new Jugador();
+	 Jugador jugador28 = new Jugador();
+	 Jugador jugador29 = new Jugador();
+	 Jugador jugador30 = new Jugador();
+	 Jugador jugador31 = new Jugador();
+	 Jugador jugador32 = new Jugador();
+	 Jugador jugador33 = new Jugador();
+	 Jugador jugador34 = new Jugador();
+	 Jugador jugador35 = new Jugador();
+	 Jugador jugador36 = new Jugador();
+	 Jugador jugador37 = new Jugador();
+	 Jugador jugador38 = new Jugador();
+	 Jugador jugador39 = new Jugador();
+	 Jugador jugador40 = new Jugador();
+	 Jugador jugador41 = new Jugador();
+	 Jugador jugador42 = new Jugador();
+	 Jugador jugador43 = new Jugador();
+	 Jugador jugador44 = new Jugador();
+	 Jugador jugador45 = new Jugador();
+	 Jugador jugador46 = new Jugador();
+	 Jugador jugador47 = new Jugador();
+	 Jugador jugador48 = new Jugador();
+	 Jugador jugador49 = new Jugador();
+	 Jugador jugador50 = new Jugador();
+	
+	public int cantidadJugadores(){
+	return 10;
+	}
+	void setEquipo(String nombreEquipo, String division, String nomEntrenador, int torneoParticipados, int torneoG, int torneoP){
+		this.nombreEquipo = nombreEquipo;
+		this.division = division;
+		this.nomEntrenador = nomEntrenador;
+		this.torneoParticipados= torneoParticipados;
+		this.torneoG = torneoG;
+		this.torneoP = torneoP;
+	}
+}
+class Jugador{
+	int numJugador;
+	String nombre;
+	int puntos;
+	String posicion;
+	String estatura;
+	
+	void setJugador(int numJugador, String nombre, int puntos, String posicion, String estatura){
+		this.numJugador = numJugador;
+		this.nombre = nombre;
+		this.puntos = puntos;
+		this.posicion = posicion;
+		this.estatura = estatura;
+	}
+}
+ class CapturaEntrada{
+
+    public static int capturarEntero(String msg){
+        Scanner sc = new Scanner(System.in);
+        System.out.print(""+msg+": ");
+        return (sc.nextInt());
+    }
+
+    public static float capturarFlotante(String msg){
+        Scanner sc = new Scanner(System.in);
+        System.out.print(""+msg+": ");
+        return (sc.nextFloat());
+    }
+
+    public static double capturarDoble(String msg){
+        Scanner sc = new Scanner(System.in);
+        System.out.print(""+msg+": ");
+        return (sc.nextDouble());
+    }
+
+    public static String capturarCadena(String msg){
+        Scanner sc = new Scanner(System.in);
+        System.out.print(""+msg+": ");
+        return (sc.nextLine());
+    }
+	
+	public static char capturarCaracter(String msg){
+		Scanner sc = new Scanner(System.in);
+        System.out.print(""+msg+": ");
+        return (sc.next().charAt(0));
+	}
+}
